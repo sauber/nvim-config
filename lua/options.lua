@@ -1,0 +1,11 @@
+vim.opt.cursorline = true -- show the cursor line
+vim.opt.undofile = true -- persist undo tree
+vim.opt.scrolloff = 3 -- cursor distance from top/bottom
+vim.opt.termguicolors = true
+vim.opt.ignorecase = true -- ignores case for search unless a capital is used in search
+vim.opt.smartcase = true -- ignores case for search unless a capital is used in search
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true -- spaces instead of tabs
+vim.opt.number = true -- show line numbers
+vim.opt.signcolumn = "number" -- merge numbers and signs in same column
