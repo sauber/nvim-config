@@ -32,5 +32,5 @@ vim.call('plug#begin')
     Plug 'rafamadriz/friendly-snippets'
 
     -- Code formatter
-    Plug 'sbdchd/neoformat'
+    Plug 'mhartington/formatter.nvim'
 vim.call('plug#end')

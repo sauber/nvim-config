@@ -10,6 +10,9 @@ require("lspconfig-settings")
 -- setup autocompletion
 require("autocomplete-settings")
 
+-- Formatter settings
+require("formatter-settings")
+
 -- Visual setup
 require("theme-settings")
 
