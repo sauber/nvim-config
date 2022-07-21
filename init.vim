@@ -1,21 +1,20 @@
 " >> load plugins
 call plug#begin()
-    Plug 'sharkdp/fd'
+    " Fuzzy finder
+    Plug 'BurntSushi/ripgrep'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/nvim-lsp-installer'
-    "Plug 'glepnir/lspsaga.nvim'
     Plug 'hrsh7th/nvim-compe'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-    "  Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
+    " Status line
     Plug 'nvim-lualine/lualine.nvim'
-    Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
-
-    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'kyazdani42/nvim-web-devicons'  " needed for lualine icons
+    Plug 'folke/tokyonight.nvim'
     Plug 'nikvdp/neomux'
 
     Plug 'tpope/vim-ragtag'
@@ -39,7 +38,8 @@ call plug#begin()
 
 call plug#end()
 
-colorscheme PaperColor
+"colorscheme PaperColor
+colorscheme tokyonight
 "set termguicolors
 " Let background be transparent
 highlight Normal ctermbg=none
@@ -104,22 +104,15 @@ let g:NERDSpaceDelims = 1
 xnoremap <Leader>ci <cmd>call NERDComment('n', 'toggle')<CR>
 nnoremap <Leader>ci <cmd>call NERDComment('n', 'toggle')<CR>
 
-
 " >> Lsp key bindings
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <C-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K     <cmd>Lspsaga hover_doc<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-p> <cmd>Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> <C-n> <cmd>Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> gn    <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
-xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
-nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 
 " In terminal use ESC to go to normal mode
 tnoremap <Esc> <C-\><C-n> 
@@ -131,6 +124,11 @@ set splitright          " Vertical split to right of current.
 
 " Call lua setup scripts in lua/ subdir
 lua <<EOF
+require('lualine').setup {
+  options = {
+    theme = 'tokyonight'
+  }
+}
 require("lsp-installer")
 require("treesitter")
 require("completion")
