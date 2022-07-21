@@ -6,7 +6,7 @@ call plug#begin()
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/nvim-lsp-installer'
-    Plug 'glepnir/lspsaga.nvim'
+    "Plug 'glepnir/lspsaga.nvim'
     Plug 'hrsh7th/nvim-compe'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -133,6 +133,5 @@ set splitright          " Vertical split to right of current.
 lua <<EOF
 require("lsp-installer")
 require("treesitter")
--- require("statusbar")
 require("completion")
 EOF
