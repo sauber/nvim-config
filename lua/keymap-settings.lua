@@ -12,6 +12,10 @@ local function telescope_find_files()
   require("telescope.builtin").find_files({ hidden = true })
 end
 
+local function telescope_live_grep()
+  require("telescope.builtin").live_grep({ hidden = true })
+end
+
 local border_options = { float = { border = "rounded" } }
 
 -- NOTE<cmd> <leader> prefixed mappings are in whichkey-settings.lua
@@ -45,6 +49,8 @@ local mappings = {
     { "<C-Right>", "<cmd>vertical resize +2<CR>", { silent = true } },
     -- Ctrl + p fuzzy files
     { "<C-p>", telescope_find_files },
+    -- Ctrl + p fuzzy files
+    { "<C-f>", telescope_live_grep },
     -- escape clears highlighting
     { "<esc>", "<cmd>noh<cr><esc>" },
     -- hop words
