@@ -5,6 +5,7 @@ vim.call('plug#begin')
 
     -- Language Server
     Plug 'neovim/nvim-lspconfig'
+    Plug 'folke/lsp-trouble.nvim'
 
     -- Fuzzy finder
     Plug 'BurntSushi/ripgrep'

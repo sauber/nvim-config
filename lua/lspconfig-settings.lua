@@ -27,3 +27,4 @@ lsp_installer.on_server_ready(function(server)
     server:setup(opts)
 end)
 
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
