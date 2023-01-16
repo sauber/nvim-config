@@ -19,6 +19,10 @@ Manually add the directory to your $HOME/.bashrc (or similar)
     export DENO_INSTALL="/home/sauber/.deno"
     export PATH="$DENO_INSTALL/bin:$PATH"
 
+## python language server
+
+    brew install autopep8
+
 ## node
 
     curl -sL https://deb.nodesource.com/setup_18.x | sed -e 's/vanessa/vera/' | sudo -E bash -
@@ -40,8 +44,6 @@ Manually add the directory to your $HOME/.bashrc (or similar)
 
 In terminator preferences->profile set font to Hurmit Ned Font Medium
 
-
- 
     ln -s $PWD/nvim-config ~/.config/nvim
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     :PlugInstall
