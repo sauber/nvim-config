@@ -48,3 +48,7 @@ In terminator preferences->profile set font to Hurmit Ned Font Medium
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     :PlugInstall
     :checkhealth
+
+## stylua
+
+    brew install stylua
